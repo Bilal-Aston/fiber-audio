@@ -23,7 +23,7 @@ ISR(TIMER1_COMPA_vect)
 
 ISR(ADC_vect)
 {
-    // MAP Latest ADC Value
+    // Map Latest ADC Value and update duty cycle 
     adc_last = ADC;
     set_duty(adc_map(adc_last));
 

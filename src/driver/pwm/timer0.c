@@ -15,7 +15,8 @@ int timer0_init(void)
 
 }
 
-void set_duty(void)
+void set_duty(uint8_t pwm)
 {
-
+	//set new duty cycle
+	OCR0A = pwm;
 }
