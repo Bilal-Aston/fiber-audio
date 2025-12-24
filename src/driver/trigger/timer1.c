@@ -3,6 +3,9 @@
 
 int timer1_init(void)
 {
+	//set TOP value
+	OCR1A = 499;
+	
 	//CTC - TOP = OCR1A no prescaler
 	TCCR1B |= (1 << WGM12) | (1<< CS10);
 

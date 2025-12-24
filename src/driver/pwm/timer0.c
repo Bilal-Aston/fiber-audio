@@ -1,4 +1,4 @@
-inlude "timer0.h"
+#include "timer0.h"
 
 
 int timer0_init(void)
@@ -7,7 +7,7 @@ int timer0_init(void)
 	DDRB |= (1 << PB3);
 
 	//Fast 8-bit PWM - clear OC0A on compare match
-	TCCR0A |= (1 << COM0A1) | (1 << WGM00) | (1 << WGM01);
+	TCCR0A = (1 << COM0A1) | (1 << WGM00) | (1 << WGM01);
 
 	//no prescaler
 	TCCR0B |= (1 << CS00);	

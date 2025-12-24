@@ -1,12 +1,12 @@
 #include "controller.h"
-#include "../pwm/timer0.h"
-#include "../trigger/timer1.h"
-#include "../adc/adc.h"
+#include "../driver/pwm/timer0.h"
+#include "..driver/trigger/timer1.h"
+#include "..driver/adc/adc.h"
 #include <avr/interrupt.h>
 
 int controller_init(void)
 {
-	if(timer0_init() || adc_init ||  timer0_init()) 
+	if(timer0_init() || adc_init() ||  timer1_init()) 
 	{
 		return 1;
 	} else {

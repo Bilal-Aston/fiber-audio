@@ -1,7 +1,7 @@
 #ifndef adc_h
 #define adc_h
-
-volatile uint16_t adc_last;
+#include <stdint.h>
+extern volatile uint16_t adc_last;
 
 void adc_start(void);
 int adc_init(void);
