@@ -18,9 +18,11 @@ int controller_init(void)
 ISR(TIMER1_COMPA_vect)
 {
     // Timer1 compare-match A ISR body
+    // something like adc_start_sample();
 }
 
 ISR(ADC_vect)
 {
     // ADC conversion complete ISR body
+    // something like adc_map();
 }
