@@ -3,5 +3,5 @@
 #include <avr/io.h> 
 
 int timer0_init(void);
-
+void set_duty(void);
 #endif

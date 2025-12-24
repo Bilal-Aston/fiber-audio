@@ -6,7 +6,7 @@
 
 int controller_init(void)
 {
-	if(timer0_init() || timer1_init ||  adc_init()) 
+	if(timer0_init() || adc_init ||  timer0_init()) 
 	{
 		return 1;
 	} else {
@@ -17,12 +17,14 @@ int controller_init(void)
 
 ISR(TIMER1_COMPA_vect)
 {
-    // Timer1 compare-match A ISR body
-    // something like adc_start_sample();
+    // Start ADC Conversion
+    adc_start();
 }
 
 ISR(ADC_vect)
 {
-    // ADC conversion complete ISR body
-    // something like adc_map();
+    // MAP Latest ADC Value
+    adc_last = ADC;
+    set_duty(adc_map(adc_last));
+
 }

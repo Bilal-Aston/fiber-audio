@@ -12,4 +12,10 @@ int timer0_init(void)
 	//no prescaler
 	TCCR0B |= (1 << CS00);	
 	return 0;
+
+}
+
+void set_duty(void)
+{
+
 }
