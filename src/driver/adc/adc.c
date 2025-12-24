@@ -1,11 +1,12 @@
 #include "adc.h"
-#include "lut.h"
-#include <avr/io.h>
+
 
 int adc_init(void)
 {
-	//set ADC0 as input
-	DDRA |= (0 << PA0);
+
+
+	//select ADC0 and Set voltage reference to AVCC
+	ADMUX = (1 << REFS0);
 
 	//Enable interrupts and set Prescale 32
 	ADCSRA = (1 << ADEN) | (1 << ADIE) | (1 << ADPS2) | (1 << ADPS0);
@@ -20,11 +21,4 @@ void adc_start(void)
 	ADCSRA |= (1 << ADSC);
 }
 
-//fill up LUT here - STUB
-
-uint8_t adc_map(uint16_t adc)
-{
-	//take an adc value and map it to a pwm value - return the value
-	return pgm_read_byte(&adc_to_pwm[adc]);
-}
 

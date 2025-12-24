@@ -10,7 +10,7 @@ int timer0_init(void)
 	TCCR0A = (1 << COM0A1) | (1 << WGM00) | (1 << WGM01);
 
 	//no prescaler
-	TCCR0B |= (1 << CS00);	
+	TCCR0B = (1 << CS00);	
 	return 0;
 
 }

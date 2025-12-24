@@ -1,13 +1,12 @@
 #include "timer1.h"
-#include <avr/io.h>
 
 int timer1_init(void)
 {
 	//set TOP value
 	OCR1A = 499;
-	
+
 	//CTC - TOP = OCR1A no prescaler
-	TCCR1B |= (1 << WGM12) | (1<< CS10);
+	TCCR1B = (1 << WGM12) | (1<< CS10);
 
 	//Enable interrupt on compare match
 	TIMSK1 |= (1 << OCIE1A);

@@ -1,8 +1,8 @@
 #include "controller.h"
 #include "../driver/pwm/timer0.h"
-#include "..driver/trigger/timer1.h"
-#include "..driver/adc/adc.h"
-#include <avr/interrupt.h>
+#include "../driver/trigger/timer1.h"
+#include "../driver/adc/adc.h"
+#include "../driver/mapping/mapping.h"
 
 int controller_init(void)
 {
@@ -24,7 +24,6 @@ ISR(TIMER1_COMPA_vect)
 ISR(ADC_vect)
 {
     // Map Latest ADC Value and update duty cycle 
-    adc_last = ADC;
-    set_duty(adc_map(adc_last));
+    set_duty(adc_map(ADC));
 
 }
