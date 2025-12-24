@@ -10,6 +10,7 @@ make
 
 can be installed with : sudo apt install gcc-avr binutils-avr avr-libc avrdude make
 
+or use whatever toolchain you want
 
 BUILD INSTRUCTIONS:
 
