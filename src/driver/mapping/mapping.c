@@ -1,7 +1,8 @@
 #include "mapping.h"
 
-static const uint8_t adc_to_pwm[MAX] PROGMEM = {
-    //populate values
+static const uint8_t adc_to_pwm[MAX + 1] PROGMEM = {
+        //populate values using preprocessor
+	#include "adc_lut.inc"
 };
 
 uint8_t adc_map(uint16_t adc)
